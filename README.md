@@ -15,6 +15,7 @@ Permet d'écouter la radio en prononcant le nom de celle-ci... Pour Jarvis (Rasp
 ## Usage
 ```
 ATTENTION... En cours de finition car pour l'arrêter avec le micro et le hp en marche !!!
+(En attendant il y a la possibilité de faire un bouton poussoir sur le gpio mais j'ai peut-être plus simple... en phase de test)
 En console faites:
 mpc stop
 
