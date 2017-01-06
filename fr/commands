@@ -1,6 +1,8 @@
-*STOP*RADIO==jv_pg_ct_radio_arrete
-
-*RADIO*==jv_pg_ct_verinomradio; if [ "$bradio" = "" ]; then say "Quelle Radio voulez vous écouter ?"; else jv_pg_ct_radio; commands="$(jv_get_commands)"; return;fi
+*STOP*RADIO*==jv_pg_ct_radio_arrete
+*LISTE*RADIO*==jv_pg_ct_radio_liste
+*VOLUME*MOINS*RADIO==jv_pg_ct_radio_volumemoins
+*VOLUME*PLUS*RADIO==jv_pg_ct_radio_volumeplus
+*LANCE*RADIO*==jv_pg_ct_verinomradio; if [ "$bradio" = "" ]; then say "Quelle Radio voulez vous écouter ?"; else jv_pg_ct_radio; commands="$(jv_get_commands)"; return;fi
 >(*)==say "On essaye la radio $(jv_pg_ct_verinomradio) $order...."; jv_pg_ct_radio
 
 

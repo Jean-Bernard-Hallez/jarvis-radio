@@ -24,6 +24,7 @@ echo "Requette = $laradio "
 # echo "$laradio" > ~/nomradio.txt
 mpc clear
 mpc add $laradio
+# mpc play
 mpc volume $volumeradio
 mpc play
 radioOnOff="On"
@@ -49,3 +50,36 @@ bradio=""
 fi
 }
 
+jv_pg_ct_radio_liste () {
+laradiolistenomtrouve=""
+nbrradio="0"
+while read device
+do
+nbrradio=`echo "$nbrradio+1" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
+local nom="$(jv_sanitize "$device.*")"
+# laradiolistenomtrouve="$(echo "$chercheradio" | jq -r ".devices[] | select(.NomRadio==\"$device\") | .NomRadio")"
+laradiolistenomtrouve=`echo "$laradiolistenomtrouve" , "$(echo "$chercheradio" | jq -r ".devices[] | select(.NomRadio==\"$device\") | .NomRadio")"`
+
+done <<< "$(echo "$chercheradio" | jq -r '.devices[].NomRadio')"
+say "il y a $nbrradio radios: $laradiolistenomtrouve"
+}
+
+jv_pg_ct_radio_volumemoins () {
+volumeradio=`echo "$volumeradio-5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
+if [[ "$volumeradio" -lt "0" ]]; then
+volumeradio="0"
+say "Volume Radio au minimum"
+return
+fi
+mpc volume $volumeradio
+}
+
+jv_pg_ct_radio_volumeplus () {
+volumeradio=`echo "$volumeradio+5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
+if [[ "$volumeradio" -gt "100" ]]; then
+volumeradio="100"
+say "Volume Radio au maximum"
+return
+fi
+mpc volume $volumeradio
+}
