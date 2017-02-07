@@ -11,15 +11,19 @@ For multi-language plugin:
 -->
 ## Description
 Permet d'écouter la radio en prononcant le nom de celle-ci... Pour Jarvis (RaspberryPi Linux)
+Plusieur radio française - (Recherchez celle qui sont en mp3) [disponible ici](http://fluxradios.blogspot.fr/p/flux-radios-francaise.html).
+
+## Languages
+
+* Français
+
 
 ## Usage
 ```
-ATTENTION... Pour arrêter avec le micro et le hp en marche c'est mission impossible !!!
-En attendant il y a la possibilité de faire un bouton poussoir sur le gpio mais il a plus simple:
-
-- ARRET AVEC: En console SSH faites: mpc stop )
-- Avec Jarvis UI vous pouvez l'arrêter en écrivant: stop radio 
-- Avec la montre et l'aplication Smartwatch Wear et tasker voir http://domotiquefacile.fr/jarvis/content/voice-control-from-smartwatch
+ATTENTION... En cours de finition car pour l'arrêter avec le micro et le hp en marche !!!
+(En attendant il y a la possibilité de faire un bouton poussoir sur le gpio mais j'ai peut-être plus simple... en phase de test)
+En console faites:
+mpc stop
 
 Vous: lance la radio
 Jarvis: Quelle radio voulez vous écouter ?
@@ -34,10 +38,6 @@ Ok
 Vous: lance la radio France de l'espace 
 Jarvis: On essaye la radio de l'espace...
 Désolé, pas de Radio trouvé pour France de l'espace
-
-Vous: Volume plus fort radio  
-
-Vous: Volume moins fort radio  
 
 
 ```
