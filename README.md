@@ -10,6 +10,7 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
+31/03/17 Installation d'un paquet suplémentaire MPD qui fonctionne avec MPC déja installé
 Permet d'écouter la radio en prononcant le nom de celle-ci... Pour Jarvis (RaspberryPi Linux)
 Plusieur radio française - (Recherchez celle qui sont en mp3) [disponible ici](http://fluxradios.blogspot.fr/p/flux-radios-francaise.html).
 
